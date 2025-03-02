@@ -1,5 +1,5 @@
 
-## How to start ( Start from the step 9 if you're already have the detection model )
+## How to start ( Start from the step 29 if you're already have the detection model )
 
 1. First of all, create python virtual environment using command:
 
@@ -16,7 +16,7 @@ env\Scripts\activate.bat
 ```
 
 
-3. Install all of the package using this command:
+3. Install all of the package using this command (Ignore it if there is any error with the torch installation):
 
 
 ```bash
@@ -59,7 +59,7 @@ pip install -r requirements.txt
 
 21. Split the data into 3 categories (train, test, valid), by clicking the `Rebalance` button
 
-22. Balance the data, I recommend you using 70:10:20 method (70% training, 10% validation, 20% testing)
+22. Balance the data, I would recommend you using 70:10:20 method (70% training, 10% validation, 20% testing)
 
 23. Just continue until generating
 
@@ -71,6 +71,15 @@ pip install -r requirements.txt
 
 27. For CUDA usage, run this command:
 ```bash
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 ```
 
+28. Run the `/module/detection/training.ipynb` file, and then it should produce trained model in `/model/detection.pth` file
+
+29. Add your image-labeled folder in `data/classification/raw/` folder (e.g. `/ideal/img_1.png`)
+
+30. Run the `/module/classification/preprocessing.ipynb` file and then it should produce cropped image in `data/classification/preprocessed/` folder
+
+40. Now run the `/module/classification/training.ipynb` file. It should give you `classification.joblib` classification model and `label.joblib` label encoder in `/model` folder
+
+41. If you wanna test the model, then run the model in `/module/classification/testing.ipynb` and test your external image
