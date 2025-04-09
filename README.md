@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 16. Invite team members or `Assign to myself` if you're doing self-project
 
-17. Click each image and follow the instruction to annotate (make sure every image label is the same as others (e.g. spark plug))
+17. Click each image and follow the instruction to annotate (make sure each image is labelled as spark plug condition (e.g. ideal, burned, etc))
 
 18. If annotation process is done, then go to `Dataset` section
 
@@ -76,10 +76,4 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 
 28. Run the `/module/detection/training.ipynb` file, and then it should produce trained model in `/model/detection.pth` file
 
-29. Add your image-labeled folder in `data/classification/raw/` folder (e.g. `/ideal/img_1.png`)
-
-30. Run the `/module/classification/preprocessing.ipynb` file and then it should produce cropped image in `data/classification/preprocessed/` folder
-
-40. Now run the `/module/classification/training.ipynb` file. It should give you `classification.joblib` classification model and `label.joblib` label encoder in `/model` folder
-
-41. If you wanna test the model, then run the model in `/module/classification/testing.ipynb` and test your external image
+29. To get the accuracy of the model or testing the model, run the `/module/detection/testing.ipynb`
